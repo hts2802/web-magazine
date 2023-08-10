@@ -1,0 +1,225 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Stick No Bills', sans-serif;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url(/IMAGE/background1.jpg);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
+}
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+.logo{
+    width: 120px;
+    cursor: pointer;
+}
+.cart-icon{
+    width: 30px;
+    cursor: pointer;
+}
+nav ul{
+    flex: 1;
+    text-align: right;
+    padding-right: 30px;
+}
+nav ul li{
+    display: inline;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    transition: width 0.3s;
+}
+nav ul li a:hover::after{
+    width: 50%;
+}
+button {
+    border: none;
+    padding: 5px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 3px 2px;
+    cursor: pointer;
+  }
+
+.text-box{
+    color: #fff;
+    position: absolute;
+    bottom: 8%;
+}
+.text-box p{
+    font-size: 50px;
+    font-weight: 600;
+}
+.text-box h1{
+    font-size: 140px;
+    line-height: 160px;
+    margin-left: -10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(/IMAGE/back.png);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+.text-box h3{
+    font-size: 40px;
+    font-weight: 600;
+}
+.text-box .row{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 10px;
+    color: #fff;
+    font-size: 20px;
+}
+.text-box a{
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: 2px solid #fff;
+}
+.social-icon{
+    position: absolute;
+    right: 5%;
+    bottom: 3%;
+}
+.social-icon img{
+    width: 30px;
+    display: block;
+    margin: 25px 5px;
+}
+video{
+    width: 1520px;
+    height: auto;
+    display: block;
+    align-items: center;
+    justify-content: center;
+}
+.post{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.3),transparent),url(/IMAGE/sao.png);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
+    color: #fff;
+    bottom: 8%;
+    position: relative;
+}
+.post h3{
+    font-size: 40px;
+    font-weight: 600;
+    color: #fff;
+}
+.post h1{
+    font-size: 140px;
+    line-height: 160px;
+    margin-left: -10px;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    background: url(/IMAGE/back.png);
+    background-clip: content-box;
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+.menu-icon{
+    width: 30px;
+    cursor: pointer;
+    margin-left: -80px;
+    margin-top: -35px;
+}
+
+.back-footer{
+    width: 100%;
+    height: 16em;
+    background-color: #333;
+    color: #eaf2f1;
+    display: inline-flex;
+    padding: 2em 20em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.under-foot{
+    height: 2px;
+    width: 100%;
+}
+.connected{
+    margin-left: 10em;
+}
+.font-18px{
+    font-size: 18px;
+}
+.form{
+    margin-left: 10em;
+
+}
+.custom-input{
+    width: 350px;
+    height: 35px;
+    background-color: #333;
+    color: #fff;
+    border: 1px solid white;
+    outline: none;
+}
+.custom-btn{
+    width: 350px;
+    height: 35px;
+    margin-top: 10px;
+    background-color: white;
+    color: #333;
+    font-size: 16px;
+}
+button:hover{
+    cursor: pointer;
+    color: rgb(var(--txth,var(--color_15)));
+}
+.custom-input:hover{
+    box-shadow: var(--shd,0 0 0 transparent);
+    border: 3px solid white;
+}
+input::placeholder{
+    padding: 25px;
+    color: #fff;
+}
+.icon{
+    display: flex;
+    justify-content: space-around;
+    
+}

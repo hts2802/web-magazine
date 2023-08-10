@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+     <script>
+		$(document).ready(function () {
+            var arr = window.location.href.split('/')
+            $.get("http://localhost:5900/getdetail/" + arr[arr.length - 1], function (data, status) {
+                    $('#name').html(data.TenSP);
+					
+                    $('#image').attr('src',"../imageMusic/" + data.Filesp);
+
+                    $('#price').html(data.GiaBan + "");
+            });
+        });
+	</script>
+ </head>
+ <body>
+    <main id="products">
+        <img id="image" src="../imageMusic/" style="width:300px; height:300px;">
+        <p><div id="name"></div></p>
+        <div id="price" ></div>
+    </main>
+</body>
+</html>

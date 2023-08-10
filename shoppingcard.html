@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function () {
+         loadShoppingCard();
+                            });
+    function loadShoppingCard() {
+            if(localStorage.getItem("shoppingcard") == undefined || localStorage.getItem("shoppingcard")=="[]"){
+                $('#content').html("Vui long chon san pham");
+    }
+    else{
+    $.post("/getshoppingcard", {
+    arrProductId: localStorage.getItem("shoppingcard").replace('[','(').replace(']',')')
+    }, function (data, status) {
+      $('#content').html(data);
+
+      var tongtien = 0;
+                    $(".product1").toArray().forEach(item=>{
+                        tongtien += parseFloat($(item).attr("price"));
+                    });
+                    $("#tongtien").html("Tổng tiền là: "+ tongtien+ "");
+    });
+    }
+        function addToCard(ProductId){
+
+        var shoppingCard = localStorage.getItem("shoppingcard");
+        if(shoppingCard == null || shoppingCard == undefined){
+            shoppingCard = [ProductId];
+        }
+        else{
+            shoppingCard = JSON.parse(shoppingCard);
+            if(shoppingCard.indexOf(ProductId) >= -1){
+                shoppingCard.push(ProductId);
+            }
+        }
+         localStorage.setItem("shoppingcard", JSON.stringify(shoppingCard))
+        }
+}
+        </script>
+    </head>
+    <body>
+        <div id="content"></div>
+    </body>
+</html>

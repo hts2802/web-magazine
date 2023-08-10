@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+	 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	 <link rel="stylesheet" type="text/css" href="/css/Music.css"/>
+	 <script>
+        $(document).ready(function () {
+      $.get("http://localhost:5900/", function (data, status) {
+        $('#content').html(data);
+      });
+    });
+ 
+    function search() {
+      $.post("http://localhost:5900/search", {
+        search: $('#search').val()
+      }, function (data, status) {
+        $('#content').html(data);
+      });
+    }
+ 
+    function keySearch(event) {
+      if (event.keyCode == 13) {
+        $.post("http://localhost:5900/search", {
+          search: $('#search').val()
+        }, function (data, status) {
+          $('#content').html(data);
+        });
+      }
+    } 
+    
+</script>
+</head>
+<body>
+    <input type="text" id="search" onkeypress="keySearch(event)" placeholder="Tìm kiếm sản phẩm..." />
+    <input type="button" value="Search" onclick="search()" />
+    <div id="content"> </div>
+</body>

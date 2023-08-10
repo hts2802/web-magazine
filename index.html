@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="/css/style.css"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        <title>V2X MAGAZINE</title>
+    <script>
+        $(document).ready(function(){
+    var user = localStorage.getItem("user")
+        if(user==null||user == undefined||user===""){
+    $("#KH").html('HELLO')
+    }else{
+    var objUser = JSON.parse(user);
+    $("#KH").html(objUser.TaiKhoan);
+    }
+}); 
+    function logout(){
+        localStorage.removeItem("user");
+        window.location.href=("/KH")
+    }
+   
+    </script>
+    </head>
+    <body>
+        <div class="container">
+            <nav>
+                <img src="/IMAGE/v2xlogo.png" class="logo">
+                <ul>
+                    <li><a href="/art">Art</a></li>
+                    <li><a href="/culture">Culture</a></li>
+                    <li><a href="/fashion">Fashion</a></li>
+                    <li><a href="/music1">Music</a></li>
+                    <li><a href="/people">People</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li id ="KH" style="color: white;"><a href="/KH">Login</a></li> 
+                    <button onclick="logout()">GUESS</button> 
+                   
+                </ul>
+               
+            </nav>
+            <div class="text-box">
+                <h1>Night</h1>
+                <h3>Là một sự thành công rực rỡ kết hợp <br>giữa Hiphop và công nghệ đồ họa 3D Visualart </h3>
+                <div class="row">
+                    <a href="">Xem Thêm &#8594;</a>
+                    <a href="">Connect With Team &#8594;</a>
+                    <span>You Can Explore More About Your Portfolio And News Here</span>
+                </div>
+            </div>
+        </div>
+        <div class="under-foot">
+
+        </div>
+        <div class="social-icon">
+            <a href="#"><img src="/IMAGE/telegram.png"></a>
+            <a href="#"><img src="/IMAGE/picture1.png"></a>
+            <a href="#"><img src="/IMAGE/instagram.png"></a>
+        </div>
+        <div class="under-foot">
+
+        </div>
+        <div class="video">
+            <video muted and autoplay and loop class="Object">
+                <source src="/VIDEO/Tuesday.mp4">
+            </video>
+        </div>
+        <div class="under-foot">
+
+        </div>
+        <div class="post">
+            <nav>
+                    <h1>Lisa & Hollywood</h1>
+                    <h3>Sự kết hợp mới của lisa <br> 
+                            cùng dàn sao đình đám xứ Hollywood </h3>
+            </nav>
+        </div>
+        <div class="under-foot">
+
+        </div>
+        <div class="back-footer">
+            <div class="visit">         
+                <p class="font-18px">​VISIT</p>
+                <p>45AVC Ngo Dinh An St &nbsp; Ho Chi Minh City, VN 41158</p>
+            </div> 
+            <div class="connected">
+                <p class="font-18px">CONTACT US</p>
+                <p>T: +84.124.11190</p>
+                <p>V2X@mysite.com</p>
+                <div class="icon">
+                    <p><i class="fab fa-facebook-f"></i></p> 
+                    <p><i class="fab fa-twitter"></i></p>
+                </div>
+            </div>
+            <div class="form">
+                <p>JOIN OUT MAILING LIST</p>
+                <div class="custom">
+                    <input type="email" class="custom-input" value="" placeholder="Enter your email here" pattern="^.+@.+\.[a-zA-Z]{2,63}$" maxlength="250" aria-label="Enter your email here"><br>
+                    <button class="custom-btn">Subscibe Now</button>
+                </div>
+            </div>
+            <div class="under-foot">
+
+            </div>
+        </div>
+    </body>
+</html>
